@@ -1,0 +1,51 @@
+/* CSS declarations go here */
+html{
+    height:100%
+}
+
+body{
+    background-color: #339999;
+}
+
+.banner{
+    min-height: 900px; 
+    width: 1600px;
+    background: #003333;
+    color:white;
+    font-size: 35px;
+    font-style: italic;
+    position: fixed;
+    top: 20%;
+    left: 30%;
+    margin-top: -100px;
+    margin-left: -300px;
+    text-align: center;
+}
+
+.banner button{
+    width: 250px;
+    height: 80px;
+    font-size:40px;
+    background: #996666;
+    cursor : pointer;
+} 
+
+
+#transcription{
+    margin-top: 50px; 
+    width : 600px; 
+    height:200px;
+    background: #669999;
+}
+
+#next{
+    position : absolute;
+    margin-top : 900px;
+    right:350px;
+    width: 250px;
+    height: 80px;
+    font-size:40px;
+    background: #99FFCC;
+    cursor : pointer;
+}
+

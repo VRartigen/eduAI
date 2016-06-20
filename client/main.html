@@ -1,0 +1,113 @@
+<head>
+  <title>simple</title>
+</head>
+
+<body>
+ 
+  {{> navigation}}
+  
+</body>
+
+<template name="mainpage">
+  {{> page1}}
+</template>
+
+
+<template name = "page1">
+  <div class = "banner">
+      <h1>IDENTIFYING INFERENCES</h1> 
+      <br />   
+      <h2>Unit 1</h2>
+      <br />  
+      <br />  
+      <button>Click Me</button>
+   </div>
+</template>
+
+<template name = "page2">
+  <div class = "banner">
+    <h1>Question</h1>
+    <ul style="list-style-type:none">
+     <li>A</li>
+     <li>B</li>
+     <li>C</li>
+     <li>D</li>   
+    </ul>
+    Answer:  <button>Speak</button> <br />
+    
+    <textarea id="transcription" readonly="readonly" ></textarea><br />
+    
+  </div> 
+    <button id = "next">Next</button>
+</template>
+
+
+<template name="navigation">
+   
+       
+   
+    <nav class = "navbar navbar-inverse navbar-fixed-top" >
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <h1 class = "navbar-brand">Welcome {{currentUser.profile.name}}</h1>
+            </div>
+            <div id = "navbar" class = "navbar-collapse collapse">
+                
+                <ul class = "nav navbar-nav navbar-right navbar-brand">
+                    <li><a href="{{pathFor route='main'}}">Home</a></li>
+                    
+                    {{#if currentUser}}
+                        
+                        <li><a href="#">Settings</a></li>
+                        <li><button class="btn btn-danger btn-logout" style="margin-top:10px;">Logout {{currentUser.profile.name}}</button></li>
+                       
+                    {{else}}
+                        <style>
+                            body{
+                                background-image: "artigenback.jpg";
+                            }
+                        </style>
+                        <li><a href="login">Login</a></li>
+                        <li><a href="register">Register</a></li>
+                    {{/if}}
+                    
+                </ul>
+                
+            </div>
+        </div>
+    </nav>
+    
+    
+</template>
+
+
+<template name = "admin">
+    <div class = "container">
+      <div class = "row">
+        <div class= "banner">
+        <form id="data" style = "margin-top : 50px">
+           Unit : <input type="number" style = "width:80px; color:black" value="unit"> <br />
+           <br />
+           Para : <input type="text" name="para" style = "width:900px; height:300px; color:black"> <br />
+           <br />
+          Question 1 : <input type="text" name="parameter" style = "color:black; width:800px"/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Answer1 : <input type="text" name="parameter" style = "color:black; width:200px"/> <br />
+           <br />
+           Question 2 : <input type="text" name="parameter" style = "color:black; width:800px"/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Answer1 : <input type="text" name="parameter" style = "color:black; width:200px"/> <br />
+           <br />
+           Question 3 : <input type="text" name="parameter" style = "color:black; width:800px"/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Answer1 : <input type="text" name="parameter" style = "color:black; width:200px"/> <br />
+           <br />
+           Question 4 : <input type="text" name="parameter" style = "color:black; width:800px"/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Answer1 : <input type="text" name="parameter" style = "color:black; width:200px"/> <br />
+           <br />
+           Question 5 : <input type="text" name="parameter" style = "color:black; width:800px"/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Answer1 : <input type="text" name="parameter" style = "color:black; width:200px"/> <br />
+           <br />
+          <input type="submit" value="Submit" style = "color:black" onClick="javascript:myfunc()"/><br />
+        </form>
+        <br />
+        </div>
+      </div>
+    </div>
+</template>
+
+
+  
+  
