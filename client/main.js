@@ -117,3 +117,87 @@ Template.navigation.events({
      } 
  }); 
  
+ 
+ Template.admin.events({
+     'submit .data':function(){
+         event.preventDefault();
+         var unitno = event.target.unitno.value;
+         var para = event.target.para.value;
+         var q1 = event.target.q1.value;
+         var q2 = event.target.q2.value;
+         var q3 = event.target.q3.value;
+         var q4 = event.target.q4.value;
+         var q5 = event.target.q5.value;
+         var a1 = event.target.a1.value;
+         var a2 = event.target.a2.value;
+         var a3 = event.target.a3.value;
+         var a4 = event.target.a4.value;
+         var a5 = event.target.a5.value;
+         
+         console.log(unitno+" P "+para+" Q1 "+q1+" Q2 "+q2+" "+q3+" "+q4+" "+q5+" "+a1+" "+a2+" "+a3+" "+a4+" "+a5);
+         if(Data.findOne({unitno :unitno})){ 
+             console.log("Value found, push the new question");
+             
+             var questionInfo = {
+                 unitno: unitno,
+                 para: para,
+                 q1: q1,
+                 q2: q2,
+                 q3: q3,
+                 q4: q4,
+                 q5: q5,
+                 a1: a1,
+                 a2: a2,
+                 a3: a3,
+                 a4: a4,
+                 a5: a5
+             }
+             
+             Meteor.call("pushQuestions", questionInfo ,function(error,result){
+                 
+                 if(!error) {
+                     console.log("Successfully pushed");
+                 }else{
+                     console.log("Not Successfully pushed"+error);
+                 }
+                 
+             });
+             
+         }else{
+             console.log("Unit number not found. Inserting the value in database.");
+             Data.insert({
+                "unitno":unitno,
+                "q" : [ {
+                        "para": para,
+                        "ques": {                      
+                            "A": {
+                                "q1": q1,
+                                "a1": a1
+                            },
+                            "B": {
+                                "q2": q2,
+                                "a2": a2
+                            },
+                            "C": {
+                                "q3": q3,
+                                "a3": a3
+                            },
+                            "D": {
+                                "q4": q4,
+                                "a4": a4
+                            },
+                            "E": {
+                                "q5": q5,
+                                "a5": a5
+                            }
+                        }
+                  }]
+            });
+         }
+     }
+ });
+ 
+
+ 
+ 
+ 
