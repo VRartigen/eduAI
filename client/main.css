@@ -4,48 +4,117 @@ html{
 }
 
 body{
-    background-color: #339999;
+    
+    background-repeat: none;
+    background-color: #AEEEEE;
 }
 
 .banner{
-    min-height: 900px; 
+    background-color: #b7c6c6;
+    background-repeat: none;
+    border-radius: 70px;
+    background-image: url("ipad.png");
+    min-height: 1130px; 
     width: 1600px;
-    background: #003333;
-    color:white;
-    font-size: 35px;
-    font-style: italic;
+    background-size:cover;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    padding-left:150px;
+    padding-right:150px;
+    color:black;
+    font-size: 30px;
     position: fixed;
-    top: 20%;
+    top: 18%;
     left: 30%;
     margin-top: -100px;
     margin-left: -300px;
     text-align: center;
+    font-family: Georgia, Times, "Times New Roman", serif;
 }
 
 .banner button{
     width: 250px;
     height: 80px;
     font-size:40px;
-    background: #996666;
+    background: #666e6e;
     cursor : pointer;
 } 
+
 
 
 #transcription{
     margin-top: 50px; 
     width : 600px; 
     height:200px;
-    background: #669999;
+    background: black;
 }
 
 #next{
-    position : absolute;
-    margin-top : 900px;
-    right:350px;
+    position : relative;
+    margin-bottom : 20px;
+    margin-left:1000px;
     width: 250px;
     height: 80px;
     font-size:40px;
-    background: #99FFCC;
+    background: #666e6e;
     cursor : pointer;
+    color:black;
 }
+
+.homeLink{
+    position : relative;
+    margin-bottom : 20px;
+    margin-right:1150px;
+    width: 250px;
+    height: 80px;
+    font-size:25px;
+    cursor : pointer;
+    color:black;
+}
+
+li{
+  margin: 10px 0;
+}
+
+.js-set-unitno{
+    color:white;
+}
+
+/* unvisited link */
+a:link {
+    color: black;
+}
+
+/* visited link */
+a:visited {
+    color: #666e6e;
+}
+
+/* mouse over link */
+a:hover {
+    color: blue;
+}
+
+#transcript{
+    color: black;
+}
+
+textarea { 
+    vertical-align: top; 
+}
+
+.btnSize{
+    margin-left:100px;
+    background: #666e6e;
+    font-size:40px;
+    width: 250px;
+    height: 80px;
+}
+
+.speech {
+    cursor: pointer;
+}
+
+
+
 

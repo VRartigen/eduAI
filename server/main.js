@@ -16,7 +16,7 @@ Meteor.methods({
                  {unitno: questionInfo.unitno},
                  {
                      $push: {
-                         "q": [{
+                         "q": {
                              "para": questionInfo.para,
                                 "ques": {                      
                                     "A": {
@@ -34,13 +34,9 @@ Meteor.methods({
                                     "D": {
                                         "q4": questionInfo.q4,
                                         "a4": questionInfo.a4
-                                    },
-                                    "E": {
-                                        "q5": questionInfo.q5,
-                                        "a5": questionInfo.a5
                                     }
                                 }
-                         }]
+                         }
                      }
                  }
              );
