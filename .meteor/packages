@@ -23,3 +23,5 @@ iron:router
 twbs:bootstrap
 accounts-ui
 accounts-password
+u2622:persistent-session
+session
