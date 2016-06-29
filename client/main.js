@@ -120,8 +120,6 @@ Template.page2.events({
 
 
 
-
-
 Template.mainpage.events({
   'click button':function(){
     Router.go('/')
@@ -161,11 +159,8 @@ Template.login.events({
                 console.log("Wrong Credentials");
             }
         });
-        
-       
-    
-       
-             console.log("userType=="+userType+", utype=="+utype);
+         
+          console.log("userType=="+userType+", utype=="+utype);
           alert("Wrong User!!! Please select your usertype");
        
 },'click .btn-facebook':function(event){ 

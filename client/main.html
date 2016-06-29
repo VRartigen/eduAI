@@ -1,5 +1,5 @@
 <head>
-  <title>simple</title>
+  <title>Artigen Edu</title>
 </head>
 
 <body>
@@ -23,9 +23,7 @@
         {{#each unitnos}}
             <a href="/page2/{{_id}}" class="js-set-unitno">Unit {{unitno}}</a><br />
         {{/each}}   
-       </ul>
-      
-      
+       </ul>     
       <br />  
       <br />  
    </div>
@@ -41,7 +39,7 @@
          <div>A) {{this.A.q1}}</div>
         {{> tfi}}
           <div class="speech">
-            <input type="text" name="q" id="transcript1" placeholder="Speak" />
+            <input type="text" name="q" id="transcript1" placeholder="Speak" x-webkit-speech/>
             <img class="speak" name="1" src="//i.imgur.com/cHidSVu.gif" />
             <div id = "1"></div>
           </div>
@@ -50,7 +48,7 @@
          <div>B) {{this.B.q2}}</div>
          {{> tfi}}
           <div class="speech" >
-            <input type="text" name="q" id="transcript2" placeholder="Speak" />
+            <input type="text" name="q" id="transcript2" placeholder="Speak" x-webkit-speech/>
             <img class="speak" name="2" src="//i.imgur.com/cHidSVu.gif" />
             <div id = "2"></div>
         </div>
@@ -59,7 +57,7 @@
          <div>C) {{this.C.q3}}</div>
          {{> tfi}}
           <div class="speech" >
-            <input type="text" name="q" id="transcript3" placeholder="Speak" />
+            <input type="text" name="q" id="transcript3" placeholder="Speak" x-webkit-speech/>
             <img class="speak" name="3" src="//i.imgur.com/cHidSVu.gif" />
             <div id = "3"></div>
         </div>
@@ -68,7 +66,7 @@
          <div>D) {{this.D.q4}}</div>
          {{> tfi}}
           <div class="speech">
-              <input type="text" name="q" id="transcript4" placeholder="Speak" />
+              <input type="text" name="q" id="transcript4" placeholder="Speak" x-webkit-speech/>
               <img class="speak" name="4" src="//i.imgur.com/cHidSVu.gif" />
               <div id = "4"></div>
           </div>
