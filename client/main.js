@@ -2,25 +2,6 @@ import { Template } from 'meteor/templating';
 import { ReactiveVar } from 'meteor/reactive-var';
 
 import './main.html';
-/*
-Template.hello.onCreated(function helloOnCreated() {
-  // counter starts at 0
-  this.counter = new ReactiveVar(0);
-});
-
-Template.hello.helpers({
-  counter() {
-    return Template.instance().counter.get();
-  },
-});
-
-Template.hello.events({
-  'click button'(event, instance) {
-    // increment the counter when button is clicked
-    instance.counter.set(instance.counter.get() + 1);
-  },
-});
-*/
 
 Session.setDefault('counter', 0);
 
@@ -78,9 +59,36 @@ Template.page2.events({
  
       recognition.onresult = function(e) {
         var ans = e.results[0][0].transcript.split(" ");
+        var arr1 = ['true','do','poo','poop','through','2','too','two','blue'];
+        var arr2 = ['false','falls','fall','fault','faults','fun','phone','fonts','voice','ford'];
+        var arr3 = ['inference'];
+        var val = '';
+        if(arr1.includes(ans[ans.length-1].toLowerCase())){
+            val = arr1[0];
+        }else if(arr2.includes(ans[ans.length-1].toLowerCase())){
+            val = arr2[0];
+        }else if(arr3.includes(ans[ans.length-1].toLowerCase())){
+            val = arr3[0];
+        }else{
+            val = ans[ans.length-1]+' - please pronounce correctly';
+        }
         
-        document.getElementById('transcript'+id).value
-                                 = ans[ans.length-1];
+        
+
+        
+        document.getElementById('transcript'+id).value = val;
+        var c = Session.get('counter');
+        console.log("val 1 = "+Data.find({"unitno": Session.get("unitnoFilter")}).fetch()[0].q[c].ques[0].A.a1+" val2="+val);
+         
+        if(val == Data.find({"unitno": Session.get("unitnoFilter")}).fetch()[0].q[c].ques[0].A.a1){
+            
+            document.getElementById(id).innerHTML='Correct';
+            document.getElementById(id).setAttribute("class","correct");  
+            
+        }else{
+            document.getElementById(id).innerHTML='Incorrect';
+            document.getElementById(id).setAttribute("class","incorrect"); 
+        }
         recognition.stop();
         
       };
@@ -232,7 +240,7 @@ Template.navigation.events({
                 "unitno":unitno,
                 "q" : [ {
                         "para": para,
-                        "ques": {                      
+                        "ques": [{                      
                             "A": {
                                 "q1": q1,
                                 "a1": a1
@@ -249,7 +257,7 @@ Template.navigation.events({
                                 "q4": q4,
                                 "a4": a4
                             }
-                        }
+                        }]
                   }]
             });
          }

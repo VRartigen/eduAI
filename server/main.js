@@ -18,7 +18,7 @@ Meteor.methods({
                      $push: {
                          "q": {
                              "para": questionInfo.para,
-                                "ques": {                      
+                                "ques": [{                      
                                     "A": {
                                         "q1": questionInfo.q1,
                                         "a1": questionInfo.a1
@@ -35,7 +35,7 @@ Meteor.methods({
                                         "q4": questionInfo.q4,
                                         "a4": questionInfo.a4
                                     }
-                                }
+                                }]
                          }
                      }
                  }
