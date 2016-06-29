@@ -36,70 +36,44 @@
     <h1><u>Question :</u></h1>
     {{questions.para}}<br /><br />
     <ul style="list-style-type:none;font-size: 28px;">
+        {{#each questions.ques}}
      <li>
-         <div>A) {{questions.ques.A.q1}}</div>
-         <label class="radio-inline">
-            <input type="radio" name="optradio">True
-          </label>
-          <label class="radio-inline">
-            <input type="radio" name="optradio">False
-          </label>
-          <label class="radio-inline">
-            <input type="radio" name="optradio">Inference
-          </label>
+         <div>A) {{this.A.q1}}</div>
+        {{> tfi}}
           <div class="speech">
             <input type="text" name="q" id="transcript1" placeholder="Speak" />
             <img class="speak" name="1" src="//i.imgur.com/cHidSVu.gif" />
+            <div id = "1"></div>
           </div>
      </li>
      <li>
-         <div>B) {{questions.ques.B.q2}}</div>
-         <label class="radio-inline">
-            <input type="radio" name="optradio">True
-          </label>
-          <label class="radio-inline">
-            <input type="radio" name="optradio">False
-          </label>
-          <label class="radio-inline">
-            <input type="radio" name="optradio">Inference
-          </label>
-          <div class="speech">
+         <div>B) {{this.B.q2}}</div>
+         {{> tfi}}
+          <div class="speech" >
             <input type="text" name="q" id="transcript2" placeholder="Speak" />
             <img class="speak" name="2" src="//i.imgur.com/cHidSVu.gif" />
+            <div id = "2"></div>
         </div>
      </li>
      <li>
-         <div>C) {{questions.ques.C.q3}}</div>
-         <label class="radio-inline">
-            <input type="radio" name="optradio">True
-          </label>
-          <label class="radio-inline">
-            <input type="radio" name="optradio">False
-          </label>
-          <label class="radio-inline">
-            <input type="radio" name="optradio">Inference
-          </label>
-          <div class="speech">
+         <div>C) {{this.C.q3}}</div>
+         {{> tfi}}
+          <div class="speech" >
             <input type="text" name="q" id="transcript3" placeholder="Speak" />
             <img class="speak" name="3" src="//i.imgur.com/cHidSVu.gif" />
+            <div id = "3"></div>
         </div>
      </li>
      <li>
-         <div>D) {{questions.ques.D.q4}}</div>
-         <label class="radio-inline">
-            <input type="radio" name="optradio">True
-          </label>
-          <label class="radio-inline">
-            <input type="radio" name="optradio">False
-          </label>
-          <label class="radio-inline">
-            <input type="radio" name="optradio">Inference
-          </label>
+         <div>D) {{this.D.q4}}</div>
+         {{> tfi}}
           <div class="speech">
               <input type="text" name="q" id="transcript4" placeholder="Speak" />
               <img class="speak" name="4" src="//i.imgur.com/cHidSVu.gif" />
+              <div id = "4"></div>
           </div>
      </li>
+     {{/each}}
     </ul>
     
      <button id = "next" class="js-movetonextquestion btn">Next</button>
@@ -146,31 +120,41 @@
 
 
 <template name = "admin">
-    <div class = "container">
-      <div class = "row">
+   
         <div class= "banner">
         <form class="data" style = "margin-top : 50px">
            Unit : <input type="number" id="unitno" style = "width:80px; color:black" value="" required/> <br />
            <br />
            <label for="para">Paragraph : </label><textarea rows="4" cols="40" id="para" name="comment" style = "color:black;" required></textarea>
            <br /><br />
-          Question 1 : <input type="text" id="q1" name="parameter" style = "color:black; width:800px" required/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Answer1 : <input type="text" id="a1" name="parameter" style = "color:black; width:200px" required/> <br />
+           Question 1 : <input type="text" id="q1" name="parameter" style = "color:black; width:600px" required/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Answer1 : <input type="text" id="a1" name="parameter" style = "color:black; width:200px" required/> <br />
            <br />
-           Question 2 : <input type="text" id="q2" name="parameter" style = "color:black; width:800px" required/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Answer1 : <input type="text" id="a2" name="parameter" style = "color:black; width:200px" required/> <br />
+           Question 2 : <input type="text" id="q2" name="parameter" style = "color:black; width:600px" required/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Answer1 : <input type="text" id="a2" name="parameter" style = "color:black; width:200px" required/> <br />
            <br />
-           Question 3 : <input type="text" id="q3" name="parameter" style = "color:black; width:800px" required/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Answer1 : <input type="text" id="a3" name="parameter" style = "color:black; width:200px" required/> <br />
+           Question 3 : <input type="text" id="q3" name="parameter" style = "color:black; width:600px" required/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Answer1 : <input type="text" id="a3" name="parameter" style = "color:black; width:200px" required/> <br />
            <br />
-           Question 4 : <input type="text" id="q4" name="parameter" style = "color:black; width:800px" required/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Answer1 : <input type="text" id="a4" name="parameter" style = "color:black; width:200px" required/> <br />
+           Question 4 : <input type="text" id="q4" name="parameter" style = "color:black; width:600px" required/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Answer1 : <input type="text" id="a4" name="parameter" style = "color:black; width:200px" required/> <br />
            <br /><br />
           
           <input type="submit" class="btn btnSize" value="Submit" style = "color:black" />
-          <button type="reset" class="btn btnSize" value="Reset" style = "color:black" >Reset</button><br />
+          <button type="reset" class="btn btnSize" value="Reset" style = "color:black" >Reset</button>
         </form>
         
-        <br />
+       
         </div>
-      </div>
-    </div>
+     
+</template>
+
+<template name="tfi">
+    <label class="radio-inline">
+            <input type="radio" name="optradio">True
+          </label>
+          <label class="radio-inline">
+            <input type="radio" name="optradio">False
+          </label>
+          <label class="radio-inline">
+            <input type="radio" name="optradio">Inference
+     </label>
 </template>
 
 

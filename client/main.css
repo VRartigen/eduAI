@@ -29,7 +29,7 @@ body{
     margin-top: -100px;
     margin-left: -300px;
     text-align: center;
-    font-family: Georgia, Times, "Times New Roman", serif;
+    font-family: Tahoma, Verdana, sans-serif;;
 }
 
 .banner button{
@@ -111,10 +111,38 @@ textarea {
     height: 80px;
 }
 
+.btnSize:hover{
+    background: #ccffcc;
+}
+
 .speech {
     cursor: pointer;
 }
 
+.speak {
+    background: #ffffe6;
+}
 
+.speak:hover{
+    background: #ccffcc;
+}
+
+#next:hover{
+    background: #ccffcc;
+}
+
+.correct{
+    position: absolute;
+    display: inline-block;
+    margin-left: 20px;
+    color: green;
+}
+
+.incorrect{
+    position: absolute;
+    display: inline-block;
+    margin-left: 20px;
+    color: red;
+}
 
 
