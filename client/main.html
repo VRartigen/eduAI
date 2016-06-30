@@ -1,5 +1,9 @@
 <head>
-  <title>simple</title>
+  <title>Artigen Edu</title>
+  <script src="http://responsivevoice.org/responsivevoice/responsivevoice.js"></script>
+<script src="http://code.jquery.com/jquery-git2.js"></script>
+
+    
 </head>
 
 <body>
@@ -10,7 +14,7 @@
 
 <template name="mainpage">
     
-  {{> page1}}
+  {{> welcome}}
 </template>
 
 
@@ -23,9 +27,7 @@
         {{#each unitnos}}
             <a href="/page2/{{_id}}" class="js-set-unitno">Unit {{unitno}}</a><br />
         {{/each}}   
-       </ul>
-      
-      
+       </ul>     
       <br />  
       <br />  
    </div>
@@ -34,14 +36,14 @@
 <template name = "page2">
   <div class = "banner">
     <h1><u>Question :</u></h1>
-    {{questions.para}}<br /><br />
+    <div id="para">{{questions.para}}</div><br />
     <ul style="list-style-type:none;font-size: 28px;">
         {{#each questions.ques}}
      <li>
          <div>A) {{this.A.q1}}</div>
         {{> tfi}}
           <div class="speech">
-            <input type="text" name="q" id="transcript1" placeholder="Speak" />
+            <input type="text" name="q" id="transcript1" placeholder="Speak" x-webkit-speech/>
             <img class="speak" name="1" src="//i.imgur.com/cHidSVu.gif" />
             <div id = "1"></div>
           </div>
@@ -50,7 +52,7 @@
          <div>B) {{this.B.q2}}</div>
          {{> tfi}}
           <div class="speech" >
-            <input type="text" name="q" id="transcript2" placeholder="Speak" />
+            <input type="text" name="q" id="transcript2" placeholder="Speak" x-webkit-speech/>
             <img class="speak" name="2" src="//i.imgur.com/cHidSVu.gif" />
             <div id = "2"></div>
         </div>
@@ -59,7 +61,7 @@
          <div>C) {{this.C.q3}}</div>
          {{> tfi}}
           <div class="speech" >
-            <input type="text" name="q" id="transcript3" placeholder="Speak" />
+            <input type="text" name="q" id="transcript3" placeholder="Speak" x-webkit-speech/>
             <img class="speak" name="3" src="//i.imgur.com/cHidSVu.gif" />
             <div id = "3"></div>
         </div>
@@ -68,7 +70,7 @@
          <div>D) {{this.D.q4}}</div>
          {{> tfi}}
           <div class="speech">
-              <input type="text" name="q" id="transcript4" placeholder="Speak" />
+              <input type="text" name="q" id="transcript4" placeholder="Speak" x-webkit-speech/>
               <img class="speak" name="4" src="//i.imgur.com/cHidSVu.gif" />
               <div id = "4"></div>
           </div>
@@ -114,7 +116,7 @@
             </div>
         </div>
     </nav>
-    
+
     
 </template>
 
@@ -156,6 +158,19 @@
             <input type="radio" name="optradio">Inference
      </label>
 </template>
+
+<template name="welcome">
+  <div class="container">
+    <div class="banner bgWelcome">
+        <div class="text-center ">
+            <div class="bg-1"><b>Welcome To Lindero Education!</b></div><br />
+            <img src="eduImg.png" class="img-circle" alt="Education" width="350" height="350">
+         </div><br /><br />
+      <a href="/mainpage" class="btn btn-info btnWelcome">ENTER</a>
+    </div>
+  </div>
+</template> 
+    
 
 
   
