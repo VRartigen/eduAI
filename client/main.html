@@ -1,5 +1,9 @@
 <head>
   <title>Artigen Edu</title>
+  <script src="http://responsivevoice.org/responsivevoice/responsivevoice.js"></script>
+<script src="http://code.jquery.com/jquery-git2.js"></script>
+
+    
 </head>
 
 <body>
@@ -10,7 +14,7 @@
 
 <template name="mainpage">
     
-  {{> page1}}
+  {{> welcome}}
 </template>
 
 
@@ -32,7 +36,7 @@
 <template name = "page2">
   <div class = "banner">
     <h1><u>Question :</u></h1>
-    {{questions.para}}<br /><br />
+    <div id="para">{{questions.para}}</div><br />
     <ul style="list-style-type:none;font-size: 28px;">
         {{#each questions.ques}}
      <li>
@@ -112,7 +116,7 @@
             </div>
         </div>
     </nav>
-    
+
     
 </template>
 
@@ -154,6 +158,19 @@
             <input type="radio" name="optradio">Inference
      </label>
 </template>
+
+<template name="welcome">
+  <div class="container">
+    <div class="banner bgWelcome">
+        <div class="text-center ">
+            <div class="bg-1"><b>Welcome To Lindero Education!</b></div><br />
+            <img src="eduImg.png" class="img-circle" alt="Education" width="350" height="350">
+         </div><br /><br />
+      <a href="/mainpage" class="btn btn-info btnWelcome">ENTER</a>
+    </div>
+  </div>
+</template> 
+    
 
 
   

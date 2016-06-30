@@ -6,9 +6,15 @@ import './main.html';
 Session.setDefault('counter', 0);
 
 
+
 Router.route('/',  {
     name : 'main',
     template : 'mainpage'
+});
+
+Router.route('/mainpage',  {
+    name : 'page1',
+    template : 'page1'
 });
 
 Router.route('/page2',  {
@@ -35,6 +41,7 @@ Router.route('/admin', {
 Router.route('/page2/:_id', {
    template: 'page2',
    
+   
 });
 
 
@@ -43,6 +50,7 @@ Template.page2.events({
     'click .js-movetonextquestion': function(e) {
         Session.set('counter', Session.get('counter') + 1);
     },
+   
     
     'click .speak' : function startDictation() {
     var id = event.target.name;
@@ -59,7 +67,7 @@ Template.page2.events({
  
       recognition.onresult = function(e) {
         var ans = e.results[0][0].transcript.split(" ");
-        var arr1 = ['true','do','poo','poop','through','2','too','two','blue'];
+        var arr1 = ['true','do','poo','poop','through','2', 'to','too','two','blue'];
         var arr2 = ['false','falls','fall','fault','faults','fun','phone','fonts','voice','ford'];
         var arr3 = ['inference'];
         var val = '';
@@ -71,6 +79,8 @@ Template.page2.events({
             val = arr3[0];
         }else{
             val = ans[ans.length-1]+' - please pronounce correctly';
+            responsiveVoice.speak('Please pronounce correctly');
+            setTimeout(5000);
         }
         
         
@@ -81,11 +91,13 @@ Template.page2.events({
         console.log("val 1 = "+Data.find({"unitno": Session.get("unitnoFilter")}).fetch()[0].q[c].ques[0].A.a1+" val2="+val);
          
         if(val == Data.find({"unitno": Session.get("unitnoFilter")}).fetch()[0].q[c].ques[0].A.a1){
-            
+            responsiveVoice.speak('Awesome! You are Correct');
             document.getElementById(id).innerHTML='Correct';
-            document.getElementById(id).setAttribute("class","correct");  
+            document.getElementById(id).setAttribute("class","correct"); 
+            responsiveVoice.speak('Lets move to the next question');
             
         }else{
+            responsiveVoice.speak('The answer is Incorrect! Please try again else move to the next question');
             document.getElementById(id).innerHTML='Incorrect';
             document.getElementById(id).setAttribute("class","incorrect"); 
         }
@@ -94,8 +106,10 @@ Template.page2.events({
       };
  
       recognition.onerror = function(e) {
-        recognition.stop();
-      }
+        
+            recognition.stop();
+        }
+      
  
     }
   
@@ -104,6 +118,7 @@ Template.page2.events({
 });
 
  Template.page2.helpers({
+     
       
      questions: function() {
          var c=Session.get('counter');
@@ -113,9 +128,13 @@ Template.page2.events({
          }
          else {
              Session.set('counter', 0);
-             Router.go('/');
+             Router.go('/mainPage');
          }
-     }
+     },
+     
+     
+     
+     
  });
 
 
@@ -285,8 +304,10 @@ Template.page1.events({
     } 
  });
  
+    
+        
 
- 
+
  
 
  
