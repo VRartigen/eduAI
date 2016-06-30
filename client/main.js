@@ -49,11 +49,26 @@ Router.route('/page2/:_id', {
 Template.page2.events({
     'click .js-movetonextquestion': function(e) {
         Session.set('counter', Session.get('counter') + 1);
+        document.getElementById("transcript4").value = "";
+        document.getElementById("4").innerHTML='';
     },
    
     
     'click .speak' : function startDictation() {
     var id = event.target.name;
+    var count = id - 1;
+    console.log(count);
+    
+        
+  
+    while(count > 0){
+    document.getElementById("transcript"+count).value = "";
+    document.getElementById(count).innerHTML='';
+    count = count-1;
+    }
+    /*else{
+       document.getElementById("transcript4").value = ""; 
+    }*/
     console.log(id);
     if (window.hasOwnProperty('webkitSpeechRecognition')) {
  
@@ -68,7 +83,7 @@ Template.page2.events({
       recognition.onresult = function(e) {
         var ans = e.results[0][0].transcript.split(" ");
         var arr1 = ['true','do','poo','poop','through','2', 'to','too','two','blue'];
-        var arr2 = ['false','falls','fall','farts','fart','fault','faults','fun','phone','fonts','voice','ford','4'];
+        var arr2 = ['false','falls','fall','farts','fart','fault','faults','fun','phone','fonts','voice','ford','4','quotes'];
         var arr3 = ['inference','incident','incidence','insurance'];
         var val = '';
         if(arr1.includes(ans[ans.length-1].toLowerCase())){
