@@ -49,6 +49,12 @@ Router.route('/page2/:_id', {
 Template.page2.events({
     'click .js-movetonextquestion': function(e) {
         Session.set('counter', Session.get('counter') + 1);
+        document.getElementById("transcript1").value = "";
+        document.getElementById("1").innerHTML='';
+        document.getElementById("transcript2").value = "";
+        document.getElementById("2").innerHTML='';
+        document.getElementById("transcript3").value = "";
+        document.getElementById("3").innerHTML='';
         document.getElementById("transcript4").value = "";
         document.getElementById("4").innerHTML='';
     },
@@ -61,14 +67,12 @@ Template.page2.events({
     
         
   
-    while(count > 0){
-    document.getElementById("transcript"+count).value = "";
-    document.getElementById(count).innerHTML='';
-    count = count-1;
-    }
-    /*else{
-       document.getElementById("transcript4").value = ""; 
+    /*while(count > 0){
+        document.getElementById("transcript"+count).value = "";
+        document.getElementById(count).innerHTML='';
+        count = count-1;
     }*/
+    
     console.log(id);
     if (window.hasOwnProperty('webkitSpeechRecognition')) {
  
@@ -102,7 +106,6 @@ Template.page2.events({
         
         document.getElementById('transcript'+id).value = val;
         var c = Session.get('counter');
-        //console.log("val 1 = "+Data.find({"unitno": Session.get("unitnoFilter")}).fetch()[0].q[c].ques[0].A.a1+" val2="+val);
         
         var text = {};
         
@@ -124,7 +127,7 @@ Template.page2.events({
             console.log("value of text is ->");
     }
     
-    if(val.toLowerCase() == text){
+    if(val.toLowerCase() == text.toLowerCase()){
             responsiveVoice.speak('Awesome! You are Correct');
             document.getElementById(id).innerHTML='Correct';
             document.getElementById(id).setAttribute("class","correct"); 
@@ -135,78 +138,6 @@ Template.page2.events({
             document.getElementById(id).innerHTML='Incorrect';
             document.getElementById(id).setAttribute("class","incorrect"); 
         }
-    
-    
-    /*switch(id) {
-        case "1":
-            if(val.toLowerCase() == Data.find({"unitno": Session.get("unitnoFilter")}).fetch()[0].q[c].ques[0].A.a1){
-                responsiveVoice.speak('Awesome! You are Correct');
-                document.getElementById(id).innerHTML='Correct';
-                document.getElementById(id).setAttribute("class","correct"); 
-                responsiveVoice.speak('Lets move to the next question');
-                
-            }else{
-                responsiveVoice.speak('The answer is Incorrect! Please try again else move to the next question');
-                document.getElementById(id).innerHTML='Incorrect';
-                document.getElementById(id).setAttribute("class","incorrect"); 
-            }
-            break;
-        case "2":
-            if(val.toLowerCase() == Data.find({"unitno": Session.get("unitnoFilter")}).fetch()[0].q[c].ques[0].B.a2){
-                responsiveVoice.speak('Awesome! You are Correct');
-                document.getElementById(id).innerHTML='Correct';
-                document.getElementById(id).setAttribute("class","correct"); 
-                responsiveVoice.speak('Lets move to the next question');
-                
-            }else{
-                responsiveVoice.speak('The answer is Incorrect! Please try again else move to the next question');
-                document.getElementById(id).innerHTML='Incorrect';
-                document.getElementById(id).setAttribute("class","incorrect"); 
-            }
-            break;
-        case "3":
-            if(val.toLowerCase() == Data.find({"unitno": Session.get("unitnoFilter")}).fetch()[0].q[c].ques[0].C.a3){
-                responsiveVoice.speak('Awesome! You are Correct');
-                document.getElementById(id).innerHTML='Correct';
-                document.getElementById(id).setAttribute("class","correct"); 
-                responsiveVoice.speak('Lets move to the next question');
-                
-            }else{
-                responsiveVoice.speak('The answer is Incorrect! Please try again else move to the next question');
-                document.getElementById(id).innerHTML='Incorrect';
-                document.getElementById(id).setAttribute("class","incorrect"); 
-            }
-            break;
-        case "4":
-            if(val.toLowerCase() == Data.find({"unitno": Session.get("unitnoFilter")}).fetch()[0].q[c].ques[0].D.a4){
-                responsiveVoice.speak('Awesome! You are Correct');
-                document.getElementById(id).innerHTML='Correct';
-                document.getElementById(id).setAttribute("class","correct"); 
-                responsiveVoice.speak('Lets move to the next question');
-                
-            }else{
-                responsiveVoice.speak('The answer is Incorrect! Please try again else move to the next question');
-                document.getElementById(id).innerHTML='Incorrect';
-                document.getElementById(id).setAttribute("class","incorrect"); 
-            }
-            break;
-        default:
-            console.log("value of text is ->");
-    }*/
-        
-        
-         
-        /*if(val.toLowerCase() == Data.find({"unitno": Session.get("unitnoFilter")}).fetch()[0].q[c].ques[0].A.a1){
-            responsiveVoice.speak('Awesome! You are Correct');
-            document.getElementById(id).innerHTML='Correct';
-            document.getElementById(id).setAttribute("class","correct"); 
-            responsiveVoice.speak('Lets move to the next question');
-            
-        }else{
-            responsiveVoice.speak('The answer is Incorrect! Please try again else move to the next question');
-            document.getElementById(id).innerHTML='Incorrect';
-            document.getElementById(id).setAttribute("class","incorrect"); 
-        }*/
         
         recognition.stop();
         
