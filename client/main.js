@@ -78,7 +78,7 @@ Template.page2.events({
  
       recognition.onresult = function(e) {
         var ans = e.results[0][0].transcript.split(" ");
-        var arr1 = ['true','do','poo','poop','through','2', 'to','too','two','blue', 'thu', 'took', 'Shoe', 'Jew', 'tools', 'juice', 'shoes', 'team'];
+        var arr1 = ['true','do','poo','poop','through','2', 'to','too','two','blue', 'thu', 'took', 'shoe', 'Shoe', 'Jew', 'tools', 'juice', 'shoes', 'team'];
         var arr2 = ['false','falls','fall','farts','fart','fault','faults','fun','phone','fonts','voice','ford','4','quotes', 'Sauce', 'boss', 'files', 'pass',  'Fall', 'Fail', 'Faults', 'Fault', 'full', 'fool', 'ass', 'owls'];
         var arr3 = ['inference','incident','incidence','insurance', 'difference', 'Interference', 'interest', 'infence', 'infants', 'intents' ];
         var val = '';
@@ -120,7 +120,6 @@ Template.page2.events({
     }
     
     if(val.toLowerCase() == text.toLowerCase()){
-            document.getElementById("id2").play();
             responsiveVoice.speak('Awesome! You are Correct');
             document.getElementById(id).innerHTML='Correct';
             document.getElementById(id).setAttribute("class","correct"); 
