@@ -1,0 +1,200 @@
+<head>
+    <title>Artigen Edu</title>
+    <script src="http://responsivevoice.org/responsivevoice/responsivevoice.js"></script>
+    <script src="http://code.jquery.com/jquery-git2.js"></script>
+
+
+</head>
+
+<body>
+
+    {{> navigation}}
+
+</body>
+
+<template name="mainpage">
+    
+  {{> welcomenew}}
+</template>
+
+
+<template name="page1">
+   <div class= "main-content ">
+        <div class = "ipad ">
+            <div class="bg-1">
+      <h1>IDENTIFYING INFERENCES</h1> 
+            
+      <!--<a href="/page2/{{_id}}">Link 1</a>-->
+      
+      <ul>
+        {{#each unitnos}}
+            <a href="/page2/{{_id}}" class="js-set-unitno">Unit {{unitno}}</a><br />
+        {{/each}}   
+       </ul>     
+      <br />  
+      </div>
+        </div>
+   </div>
+   
+</template>
+
+<template name="page2">
+  <div class= "main-content ">
+        <div class = "ipad ">
+            <div class="bg-1">
+   <u>Question :</u></div>
+    <div class="bg-2">
+    <div id="para" style="color:#660066; font-size: 150%">{{questions.para}}</div>
+    
+    <ul style="list-style-type:none;">
+        {{#each questions.ques}}
+     <li>
+         <div >A) {{this.A.q1}}</div>
+        {{> tfi}}
+          <div class="speech">
+            <input type="text" name="q" id="transcript1" placeholder="Speak" x-webkit-speech/>
+            <img class="speak" name="1" src="//i.imgur.com/cHidSVu.gif" />
+            <div id = "1"></div>
+          </div>
+     </li>
+     <li>
+         <div >B) {{this.B.q2}}</div>
+         {{> tfi}}
+          <div class="speech" >
+            <input type="text" name="q" id="transcript2" placeholder="Speak" x-webkit-speech/>
+            <img class="speak" name="2" src="//i.imgur.com/cHidSVu.gif" />
+            <div id = "2"></div>
+        </div>
+     </li>
+     <li>
+         <div>C) {{this.C.q3}}</div>
+         {{> tfi}}
+          <div class="speech" >
+            <input type="text" name="q" id="transcript3" placeholder="Speak" x-webkit-speech/>
+            <img class="speak" name="3" src="//i.imgur.com/cHidSVu.gif" />
+            <div id = "3"></div>
+        </div>
+     </li>
+     <li>
+         <div>D) {{this.D.q4}}</div>
+         {{> tfi}}
+          <div class="speech">
+              <input type="text" name="q" id="transcript4" placeholder="Speak" x-webkit-speech/>
+              <img class="speak" name="4" src="//i.imgur.com/cHidSVu.gif" />
+              <div id = "4"></div>
+          </div>
+     </li>
+     {{/each}}
+    </ul>
+    <br />
+     <button class="js-movetoprevquestion btn btnSize" style="right:100%">Previous</button>
+     <button class="js-movetonextquestion btn btnSize" style="left:60%">Next</button>
+    
+     
+    </div>
+  </div> 
+  </div>
+   
+</template>
+
+
+<template name="navigation">
+    <nav class = "navbar navbar-inverse navbar-fixed-top" >
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <h1 class = "navbar-brand">Welcome {{currentUser.profile.name}}</h1>
+            </div>
+            <div id = "navbar" class = "navbar-collapse collapse">
+                
+                <ul class = "nav navbar-nav navbar-right navbar-brand">
+                    <li><a href="{{pathFor route='main'}}">Home</a></li>
+                    
+                    {{#if currentUser}}
+                        
+                        <li><a href="#">Settings</a></li>
+                        <li><button class="btn btn-danger btn-logout" style="margin-top:10px;">Logout {{currentUser.profile.name}}</button></li>
+                       
+                    {{else}}
+                        <style>
+                            body{
+                                background-image: "artigenback.jpg";
+                            }
+                        </style>
+                        <li><a href="login">Login</a></li>
+                        <li><a href="register">Register</a></li>
+                    {{/if}}
+                    
+                </ul>
+                
+            </div>
+        </div>
+    </nav>
+
+    
+</template>
+
+
+<template name="admin">
+   
+         <div class= "main-content ">
+             
+                 
+        <div class = "ipad " >
+           <div class="bg-1">
+                 <u>Admin Panel</u>
+                 
+             </div>
+             <div class="bg-2" style="padding-top: 1%;">
+        <form class="data">
+           Unit : <input type="number" id="unitno" style = "width:80px; color:black" value="" required/> <br />
+           <br />
+           <label for="para">Paragraph : </label><textarea rows="4" cols="40" id="para" name="comment" style = "color:black;" required></textarea>
+           <br /><br />
+           Q1 : <input type="text" id="q1" name="parameter" style = "color:black; width:50%" required/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; A1 : <input type="text" id="a1" name="parameter" style = "color:black; width:10%" required/> <br />
+           <br />
+           Q2 : <input type="text" id="q2" name="parameter" style = "color:black; width:50%" required/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; A2 : <input type="text" id="a2" name="parameter" style = "color:black; width:10%" required/> <br />
+           <br />
+           Q3 : <input type="text" id="q3" name="parameter" style = "color:black; width:50%" required/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; A3 : <input type="text" id="a3" name="parameter" style = "color:black;width:10%" required/> <br />
+           <br />
+           Q4 : <input type="text" id="q4" name="parameter" style = "color:black; width:50%" required/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; A4 : <input type="text" id="a4" name="parameter" style = "color:black; width:10%" required/> <br />
+           <br />
+          
+          <input type="submit" class="btn btnSize" value="Submit" style = "color:black" />
+          <button type="reset" class="btn btnSize" value="Reset" style = "color:black" >Reset</button>
+        </form>
+         
+             </div>
+       
+        </div>
+         </div>
+     
+</template>
+
+<template name="tfi">
+    <label class="radio-inline">
+            <input type="radio" name="optradio">True
+          </label>
+          <label class="radio-inline">
+            <input type="radio" name="optradio">False
+          </label>
+          <label class="radio-inline">
+            <input type="radio" name="optradio">Inference
+     </label>
+</template>
+
+
+
+<template name = "welcomenew">
+    <div class= "main-content ">
+        <div class = "ipad">
+            <div class="bg-1" style="padding-top:10%;"><b>Welcome To Lindero Education!</b></div>
+            <div class = "bg-admin" style="padding-top:5%;">
+            <img src="eduImg.png" class="img-circle" alt="Education" width="30%" height="30%" padding-top="10%"><br /><br />
+      <a href="/mainpage" class="btn btn-info btnWelcome">ENTER</a></div></div>
+    </div>
+    
+  
+        
+
+</template>
+    

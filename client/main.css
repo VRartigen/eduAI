@@ -1,0 +1,176 @@
+/* CSS declarations go here */
+html{
+    height:90%
+}
+
+body{
+    background-repeat: none;
+    background-color: #AEEEEE;
+    height: 100%;
+    width: 100%;
+}
+
+.main-content{
+    position : relative;
+    top: 10%;
+    width: 100%;
+    height: 80%;
+    
+    
+}
+.ipad{
+    position: relative;
+    width: 55%;
+    height: 100%;
+    margin : 0 auto;
+    background-image: url("ipad.png");
+    background-repeat: no-repeat;
+    background-size:contain ;
+   
+    border-radius: 6%;
+    
+}
+
+#transcription{
+    margin-top: 50px; 
+    width : 600px; 
+    height:200px;
+    background: black;
+}
+
+
+.homeLink{
+    position : relative;
+    margin-bottom : 20px;
+    margin-right:1150px;
+    width: 250px;
+    height: 80px;
+    font-size:25px;
+    cursor : pointer;
+    color:black;
+}
+
+li{
+  margin: 10px 0;
+}
+
+.js-set-unitno{
+    color:white;
+}
+
+/* unvisited link */
+a:link {
+    color: black;
+}
+
+/* visited link */
+a:visited {
+    color: #666e6e;
+}
+
+/* mouse over link */
+a:hover {
+    color: blue;
+}
+
+#transcript{
+    color: black;
+}
+
+textarea { 
+    vertical-align: top; 
+}
+
+.btnSize{
+    margin-left:100px;
+    background: #666e6e;
+    font-size:100%;
+    width: 15%;
+    height: 10%;
+}
+
+.btnSize:hover{
+    background: #ccffcc;
+}
+
+.speech {
+    cursor: pointer;
+}
+
+.speech img{
+    width: 3%;
+    height: 3%;
+}
+
+.speak {
+    background: #ffffe6;
+}
+
+.speak:hover{
+    background: #ccffcc;
+}
+
+#next:hover{
+    background: #ccffcc;
+}
+
+.correct{
+    position: absolute;
+    display: inline-block;
+    margin-left: 20px;
+    color: green;
+}
+
+.incorrect{
+    position: absolute;
+    display: inline-block;
+    margin-left: 20px;
+    color: red;
+}
+
+.btnWelcome {
+    font-weight:700;
+    font-size:40px;
+}
+
+
+
+.bg-1 {
+    text-align: center;
+    font-size:300%;
+    padding-top: 5%;
+    color:#660066;
+    margin-left: auto;
+    margin-right: auto;
+    
+    
+}
+
+.bg-2{
+    text-align: center;
+    font-size:150%;
+    color:black;
+    padding-left:10%;
+    padding-right:15%;
+}
+
+.bg-admin {  
+    text-align: center;
+    font-size:130%;
+    padding-top:5%;
+    color:black;
+}
+
+@media screen and (max-width: 1600px){
+    .bg-1{
+        font-size:200%;
+    }
+}
+
+@media screen and (max-width: 1096px){
+    .ipad{
+        width: 100%;
+        left: 0%;
+        /*height:100%;*/
+    }
+}
