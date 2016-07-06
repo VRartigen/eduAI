@@ -6,7 +6,7 @@ html{
 body{
     background-repeat: none;
     background-color: #AEEEEE;
-<<<<<<< HEAD
+
     height: 100%;
     width: 100%;
 }
@@ -34,8 +34,7 @@ body{
     
 }
 
-=======
-}
+
 
 .banner{
     background-color: #b7c6c6;
@@ -69,8 +68,6 @@ body{
 } 
 
 
-
->>>>>>> 2a65886f141078f1f051ea36fed030828f446b58
 #transcription{
     margin-top: 50px; 
     width : 600px; 
@@ -78,8 +75,7 @@ body{
     background: black;
 }
 
-<<<<<<< HEAD
-=======
+
 #next{
     position : relative;
     margin-bottom : 20px;
@@ -91,7 +87,7 @@ body{
     cursor : pointer;
     color:black;
 }
->>>>>>> 2a65886f141078f1f051ea36fed030828f446b58
+
 
 .homeLink{
     position : relative;
@@ -136,19 +132,17 @@ textarea {
 }
 
 .btnSize{
-<<<<<<< HEAD
+
     margin-left:10%;
     background: #666e6e;
     font-size:100%;
     width: 15%;
     height: 10%;
-=======
     margin-left:100px;
     background: #666e6e;
     font-size:40px;
     width: 250px;
     height: 80px;
->>>>>>> 2a65886f141078f1f051ea36fed030828f446b58
 }
 
 .btnSize:hover{
@@ -159,14 +153,11 @@ textarea {
     cursor: pointer;
 }
 
-<<<<<<< HEAD
 .speech img{
     width: 3%;
     height: 3%;
 }
 
-=======
->>>>>>> 2a65886f141078f1f051ea36fed030828f446b58
 .speak {
     background: #ffffe6;
 }
@@ -198,7 +189,7 @@ textarea {
     font-size:40px;
 }
 
-<<<<<<< HEAD
+
 
 
 .bg-1 {
@@ -250,7 +241,7 @@ textarea {
         font-size:100%;
         /*height:100%;*/
     }
-=======
+
 .bg-1 {
     font-size:50px;
     padding-top: 30px;
@@ -260,5 +251,6 @@ textarea {
 
 .bgWelcome{
     background-color: #ffffcc;
->>>>>>> 2a65886f141078f1f051ea36fed030828f446b58
+
+}
 }
