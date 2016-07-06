@@ -12,21 +12,23 @@ body{
 
 .main-content{
     position : relative;
-    top: 10%;
+    padding-top: 10%;
     width: 100%;
-    height: 80%;
+    height: 100%;
+    
     
     
 }
 .ipad{
     position: relative;
-    width: 55%;
+    width: 65%;
     height: 100%;
     margin : 0 auto;
     background-image: url("ipad.png");
     background-repeat: no-repeat;
-    background-size:contain ;
-   
+    background-size:100% 100% ;
+   /*padding-left:10%;
+   padding-right:15%;*/
     border-radius: 6%;
     
 }
@@ -82,7 +84,7 @@ textarea {
 }
 
 .btnSize{
-    margin-left:100px;
+    margin-left:10%;
     background: #666e6e;
     font-size:100%;
     width: 15%;
@@ -150,6 +152,7 @@ textarea {
     text-align: center;
     font-size:150%;
     color:black;
+    height: 70%;
     padding-left:10%;
     padding-right:15%;
 }
@@ -162,8 +165,16 @@ textarea {
 }
 
 @media screen and (max-width: 1600px){
+    .ipad{
+        width: 100%;
+        left: 0%;
+        margin: 0 auto;
+        font-size:100%;
+        /*height:100%;*/
+    }
     .bg-1{
-        font-size:200%;
+        font-size:150%;
+        margin: 0 auto;
     }
 }
 
@@ -171,6 +182,8 @@ textarea {
     .ipad{
         width: 100%;
         left: 0%;
+        margin: 0 auto;
+        font-size:100%;
         /*height:100%;*/
     }
 }
