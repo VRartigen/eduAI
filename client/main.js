@@ -91,9 +91,9 @@ Template.page2.events({
  
       recognition.onresult = function(e) {
         var ans = e.results[0][0].transcript.split(" ");
-        var arr1 = ['true','do','poo','poop','through','2', 'to','too','two','blue'];
-        var arr2 = ['false','falls','fall','farts','fart','fault','faults','fun','phone','fonts','voice','ford','4','quotes'];
-        var arr3 = ['inference','incident','incidence','insurance'];
+       var arr1 = ['true','do','poo','poop','through','2', 'to','too','two','blue', 'thu', 'took', 'shoe', 'Shoe', 'Jew', 'tools', 'juice', 'shoes', 'team'];
+        var arr2 = ['false','falls','fall','farts','fart','fault','faults','fun','phone','fonts','voice','ford','4','quotes', 'Sauce', 'boss', 'files', 'pass',  'Fall', 'Fail', 'Faults', 'Fault', 'full', 'fool', 'ass', 'owls'];
+        var arr3 = ['inference','incident','incidence','insurance', 'difference', 'Interference', 'interest', 'infence', 'infants', 'intents' ];
         var val = '';
         if(arr1.includes(ans[ans.length-1].toLowerCase())){
             val = arr1[0];

@@ -137,7 +137,7 @@ textarea {
     background: #666e6e;
     font-size:100%;
     width: 15%;
-    height: 10%;
+    height: 8%;
     margin-left:100px;
     background: #666e6e;
     font-size:100%;
@@ -220,19 +220,13 @@ textarea {
 
 @media screen and (max-width: 1600px){
     .ipad{
-       /* width: 100%;*/
-        /*left: 0%;*/
-     /*   margin: 0 auto;*/
-        font-size:120%;
-        /*height:100%;*/
-        padding-top: 4%;
+        font-size:100%;
     }
     .bg-1{
-        font-size:100%;
-        /*margin: 0 auto;*/
+        font-size:80%;
     }
     .bg-2{
-        font-size : 100%;
+        font-size : 80%;
     }
     .btnSize{
         width: 12%;
@@ -244,18 +238,27 @@ textarea {
     .ipad{
         width: 100%;
         left: 0%;
-        margin: 0 auto;
-        padding-top: 4%;
-        font-size:100%;
+        
+        padding-top: 5%;
+        font-size:150%;
         /*height:100%;*/
     }
 
 .bg-1 {
-    font-size:100%;
-    padding-top: 4%;
+    font-size:120%;
+    padding-top: 7%;
     color:#660066
     
 }
+
+.bg-2{
+        font-size : 120%;
+    }
+    
+    .btnSize{
+        width: 15%;
+        height: 6%;
+    }
 
 
 }
