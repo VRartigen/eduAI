@@ -58,6 +58,7 @@ Template.page2.events({
         document.getElementById("transcript4").value = "";
         document.getElementById("4").innerHTML='';
     },
+<<<<<<< HEAD
     
     'click .js-movetoprevquestion': function(e) {
         console.log("value of counter "+Session.get('counter'));
@@ -70,6 +71,8 @@ Template.page2.events({
         
     },
     
+=======
+>>>>>>> 2a65886f141078f1f051ea36fed030828f446b58
    
     
     'click .speak' : function startDictation() {
@@ -77,6 +80,16 @@ Template.page2.events({
     var count = id - 1;
     console.log(count);
     
+<<<<<<< HEAD
+=======
+        
+  
+    /*while(count > 0){
+        document.getElementById("transcript"+count).value = "";
+        document.getElementById(count).innerHTML='';
+        count = count-1;
+    }*/
+>>>>>>> 2a65886f141078f1f051ea36fed030828f446b58
     
     console.log(id);
     if (window.hasOwnProperty('webkitSpeechRecognition')) {

@@ -1,4 +1,5 @@
 <head>
+<<<<<<< HEAD
     <title>Artigen Edu</title>
     <script src="http://responsivevoice.org/responsivevoice/responsivevoice.js"></script>
     <script src="http://code.jquery.com/jquery-git2.js"></script>
@@ -10,10 +11,24 @@
 
     {{> navigation}}
 
+=======
+  <title>Artigen Edu</title>
+  <script src="http://responsivevoice.org/responsivevoice/responsivevoice.js"></script>
+<script src="http://code.jquery.com/jquery-git2.js"></script>
+
+    
+</head>
+
+<body>
+ 
+  {{> navigation}}
+  
+>>>>>>> 2a65886f141078f1f051ea36fed030828f446b58
 </body>
 
 <template name="mainpage">
     
+<<<<<<< HEAD
   {{> welcomenew}}
 </template>
 
@@ -26,12 +41,24 @@
             
       <!--<a href="/page2/{{_id}}">Link 1</a>-->
       
+=======
+  {{> welcome}}
+</template>
+
+
+<template name = "page1">
+  <div class = "banner">
+      <h1>IDENTIFYING INFERENCES</h1> 
+      <br />   
+      <!--<a href="/page2/{{_id}}">Link 1</a>-->
+>>>>>>> 2a65886f141078f1f051ea36fed030828f446b58
       <ul>
         {{#each unitnos}}
             <a href="/page2/{{_id}}" class="js-set-unitno">Unit {{unitno}}</a><br />
         {{/each}}   
        </ul>     
       <br />  
+<<<<<<< HEAD
       </div>
         </div>
    </div>
@@ -50,6 +77,20 @@
         {{#each questions.ques}}
      <li>
          <div >A) {{this.A.q1}}</div>
+=======
+      <br />  
+   </div>
+</template>
+
+<template name = "page2">
+  <div class = "banner">
+    <h1><u>Question :</u></h1>
+    <div id="para">{{questions.para}}</div><br />
+    <ul style="list-style-type:none;font-size: 28px;">
+        {{#each questions.ques}}
+     <li>
+         <div>A) {{this.A.q1}}</div>
+>>>>>>> 2a65886f141078f1f051ea36fed030828f446b58
         {{> tfi}}
           <div class="speech">
             <input type="text" name="q" id="transcript1" placeholder="Speak" x-webkit-speech/>
@@ -58,7 +99,11 @@
           </div>
      </li>
      <li>
+<<<<<<< HEAD
          <div >B) {{this.B.q2}}</div>
+=======
+         <div>B) {{this.B.q2}}</div>
+>>>>>>> 2a65886f141078f1f051ea36fed030828f446b58
          {{> tfi}}
           <div class="speech" >
             <input type="text" name="q" id="transcript2" placeholder="Speak" x-webkit-speech/>
@@ -86,6 +131,7 @@
      </li>
      {{/each}}
     </ul>
+<<<<<<< HEAD
     <br />
      <button class="js-movetoprevquestion btn btnSize" style="right:100%">Previous</button>
      <button class="js-movetonextquestion btn btnSize" style="left:60%">Next</button>
@@ -94,6 +140,12 @@
     </div>
   </div> 
   </div>
+=======
+    
+     <button id = "next" class="js-movetonextquestion btn">Next</button>
+    
+  </div> 
+>>>>>>> 2a65886f141078f1f051ea36fed030828f446b58
    
 </template>
 
@@ -134,6 +186,7 @@
 </template>
 
 
+<<<<<<< HEAD
 <template name="admin">
    
          <div class= "main-content ">
@@ -146,10 +199,17 @@
              </div>
              <div class="bg-2" style="padding-top: 1%;">
         <form class="data">
+=======
+<template name = "admin">
+   
+        <div class= "banner">
+        <form class="data" style = "margin-top : 50px">
+>>>>>>> 2a65886f141078f1f051ea36fed030828f446b58
            Unit : <input type="number" id="unitno" style = "width:80px; color:black" value="" required/> <br />
            <br />
            <label for="para">Paragraph : </label><textarea rows="4" cols="40" id="para" name="comment" style = "color:black;" required></textarea>
            <br /><br />
+<<<<<<< HEAD
            Q1 : <input type="text" id="q1" name="parameter" style = "color:black; width:50%" required/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; A1 : <input type="text" id="a1" name="parameter" style = "color:black; width:10%" required/> <br />
            <br />
            Q2 : <input type="text" id="q2" name="parameter" style = "color:black; width:50%" required/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; A2 : <input type="text" id="a2" name="parameter" style = "color:black; width:10%" required/> <br />
@@ -158,15 +218,31 @@
            <br />
            Q4 : <input type="text" id="q4" name="parameter" style = "color:black; width:50%" required/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; A4 : <input type="text" id="a4" name="parameter" style = "color:black; width:10%" required/> <br />
            <br />
+=======
+           Question 1 : <input type="text" id="q1" name="parameter" style = "color:black; width:600px" required/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Answer1 : <input type="text" id="a1" name="parameter" style = "color:black; width:200px" required/> <br />
+           <br />
+           Question 2 : <input type="text" id="q2" name="parameter" style = "color:black; width:600px" required/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Answer1 : <input type="text" id="a2" name="parameter" style = "color:black; width:200px" required/> <br />
+           <br />
+           Question 3 : <input type="text" id="q3" name="parameter" style = "color:black; width:600px" required/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Answer1 : <input type="text" id="a3" name="parameter" style = "color:black; width:200px" required/> <br />
+           <br />
+           Question 4 : <input type="text" id="q4" name="parameter" style = "color:black; width:600px" required/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Answer1 : <input type="text" id="a4" name="parameter" style = "color:black; width:200px" required/> <br />
+           <br /><br />
+>>>>>>> 2a65886f141078f1f051ea36fed030828f446b58
           
           <input type="submit" class="btn btnSize" value="Submit" style = "color:black" />
           <button type="reset" class="btn btnSize" value="Reset" style = "color:black" >Reset</button>
         </form>
+<<<<<<< HEAD
          
              </div>
        
         </div>
          </div>
+=======
+        
+       
+        </div>
+>>>>>>> 2a65886f141078f1f051ea36fed030828f446b58
      
 </template>
 
@@ -182,6 +258,7 @@
      </label>
 </template>
 
+<<<<<<< HEAD
 
 
 <template name = "welcomenew">
@@ -198,3 +275,21 @@
 
 </template>
     
+=======
+<template name="welcome">
+  <div class="container">
+    <div class="banner bgWelcome">
+        <div class="text-center ">
+            <div class="bg-1"><b>Welcome To Lindero Education!</b></div><br />
+            <img src="eduImg.png" class="img-circle" alt="Education" width="350" height="350">
+         </div><br /><br />
+      <a href="/mainpage" class="btn btn-info btnWelcome">ENTER</a>
+    </div>
+  </div>
+</template> 
+    
+
+
+  
+  
+>>>>>>> 2a65886f141078f1f051ea36fed030828f446b58
